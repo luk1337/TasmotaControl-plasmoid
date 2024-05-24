@@ -9,6 +9,11 @@ PlasmoidItem {
     Plasmoid.icon: Qt.resolvedUrl("icon.svg")
 
     fullRepresentation: PlasmaComponents3.ScrollView {
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 24
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 24
+        Layout.maximumWidth: Kirigami.Units.gridUnit * 80
+        Layout.maximumHeight: Kirigami.Units.gridUnit * 40
+
         ListView {
             id: listView
 
