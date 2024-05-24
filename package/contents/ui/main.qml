@@ -60,7 +60,7 @@ PlasmoidItem {
     }
 
     function jsonGetRequest(url, callback) {
-        let request = new XMLHttpRequest()
+        const request = new XMLHttpRequest()
         request.onload = () => callback(JSON.parse(request.responseText))
         request.open("GET", url)
         request.send()
