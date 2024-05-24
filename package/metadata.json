@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "priv.luk@gmail.com",
+                "Name": "luk1337"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "A widget that lets me control Tasmota devices in my local network",
+        "Icon": "",
+        "Id": "com.luk.tasmotacontrol",
+        "Name": "TasmotaControl",
+        "Version": "1",
+        "Website": "https://github.com/luk1337/plasmoid-TasmotaControl"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-NotificationArea": "true",
+    "X-Plasma-NotificationAreaCategory": "ApplicationStatus"
+}
