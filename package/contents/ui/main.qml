@@ -14,23 +14,37 @@ PlasmoidItem {
         Layout.maximumWidth: Kirigami.Units.gridUnit * 80
         Layout.maximumHeight: Kirigami.Units.gridUnit * 40
 
-        ListView {
-            id: listView
+        GridView {
+            id: gridView
 
             anchors {
                 fill: parent
                 margins: Kirigami.Units.smallSpacing
             }
 
-            delegate: PlasmaComponents3.CheckBox {
-                checked: on
-                text: title
-                width: listView.width
+            cellWidth: width / 3
+            cellHeight: width / 3
+            delegate: Item {
+                height: gridView.cellHeight
+                width: gridView.cellWidth
 
-                onToggled: toggleDevice(index)
+                PlasmaComponents3.Button {
+                    anchors {
+                        fill: parent
+                        margins: Kirigami.Units.smallSpacing * 2
+                    }
+
+                    Kirigami.Icon {
+                        anchors.centerIn: parent
+                        height: parent.height * 0.5
+                        width: parent.width * 0.5
+                        source: Qt.resolvedUrl(on ? iconOn : iconOff)
+                    }
+
+                    onClicked: toggleDevice(index)
+                }
             }
             model: devices
-            spacing: Kirigami.Units.smallSpacing * 2
         }
     }
 
@@ -38,14 +52,16 @@ PlasmoidItem {
         id: devices
 
         ListElement {
+            iconOff: "light-off.svg"
+            iconOn: "light-on.svg"
             on: false
-            title: "lampka ;3"
             url: "http://luk-tasmota-2.lan"
         }
 
         ListElement {
+            iconOff: "speaker-off.svg"
+            iconOn: "speaker-on.svg"
             on: false
-            title: "głośniki ^.^"
             url: "http://luk-tasmota-1.lan"
         }
     }
